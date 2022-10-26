@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студенты-Сайт группы</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script defer src="..js/login-popup.js"></script>
+</head>
+<body class="page">
+    <header class="header">
+        <img class="site-logo" src="../img/logo.svg" alt="логотип">
+        <ul class="site-menu">
+            <li><a class="menu-link" href="../index.html">Главная</a></li>
+            <li><a class="menu-link active-link" href="#">Студенты</a></li>
+            <li><a class="menu-link" href="../pages/about.html">О курсе</a></li>
+            <li><a class="menu-link" href="../pages/contacts.html">Контакты</a></li>
+        </ul>
+        <a class="login-button" href="login.html">Войти</a>
+        <div class="login-popup">
+            <h2 class="login-heading">Войти на сайт</h2>
+            <form class="login-form" action="#" method="GET">
+                <input class="login-input" name="login" type="text" placeholder="Логин" required="">
+                <input class="password-input" name="password" type="password" placeholder="Пароль" required="">
+                <button class="popup-button" type="submit">Войти</button>
+            </form>
+        </div>
+    </header>
+    <main class="main">
+        <h1 class="main-heading">Оксана Костикова</h1>
+        <div>
+        <img src="../img/logo1.jpg" alt="avatar" class="section-profile-logo myphoto">
+        </div>
+        <p>
+            По образованию <strong>журналист</strong> со стажем работы в отрасли с 2004 года.
+            <a href="https://v1.ru/text/realty/2010/12/09/56615621/?shareRecordImage=62f0e2a9a675940fd633d8575029c785">
+                <i>Одна из моих статей</i></a><br>
+            В 2022 году решила попробоваться в новой для себя сфере <em>IT</em>.
+        
+        </p>
+            <nav>
+             <ul>
+                <li><a href="#strengths">Мои сильные стороны</a></li>
+                <li><a href="#positions">Должности за период работы</a></li>
+                <li><a href="#skills">Прикладные навыки</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+             </ul>
+            </nav>
+        
+            <h3 style="color:rgb(33, 59, 126, 1)">Мои сильные стороны</h3>
+            <ol>
+                <li>Дисциплинированность</li>
+                <li>Энтузиазм</li>
+                <li>Коммуникативные навыки</li>
+                <li>Планирование</li>
+            </ol>
+            <h3 style="color: rgb(33, 59, 126, 1);">Должности за период работы</h3>
+            <ul class="ul-square">
+                <li>корреспондент</li>
+                <li>руководитель корреспондентской сети</li>
+                <li>шеф-редактор</li>
+                <li>редактор</li>
+            </ul>
+        
+            <table class="skill">
+                <tr>
+                    <th>Навык</th>
+                    <th>Уровень</th>
+                    <th>Дополнительно</th>
+                </tr>
+                <tr>
+                    <td>Водительские права</td>
+                    <td>Категория В</td>
+                    <td>Наличие автомобиля</td>
+                </tr>
+                <tr>
+                    <td>Иностраннный язык</td>
+                    <td>Английский В1</td>
+                    <td>Продолжаю учить</td>
+                </tr>
+            </table>
+        
+            <h3 style="color: rgb(33, 59, 126, 1);">Контакты</h3> 
+            <form action="#" class=form_group method="get">
+                <label for="contacts">Написать мне:</label>
+                <input id="contacts" type="text" required placeholder="ФИО">
+            <fieldset>
+                <legend>Приоритетный способ связи</legend>
+                <label for="ВК">ВК</label>
+                <input id="ВК" type="checkbox" name="option" value="ВК">
+                <label for="ОК">OK</label>
+                <input id="ОК" type="checkbox" name="option" value="ОК">
+                <label for="Viber">Viber</label>
+                <input id="Viber" type="checkbox" name="option" value="Viber">
+            </fieldset>
+               <button type="submit">Отправить</button>
+            </form>
+    </main>
+    <footer class="footer">
+        <p class="copywrite">2022 &copy; <a class="inoop-link" href="https://innopolis.com/">Иннополис</a></p>
+    </footer>
+</body>
+</html>

@@ -8,7 +8,8 @@
 
 /* header */
 .header {
-    position: relative;
+    /* position: fixed; */
+    top: 0;
     box-sizing: border-box;
     width: 100%;
     max-width: 1300px;
@@ -20,6 +21,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: rgb(33, 59, 126, 1);
+    z-index: 1;
 }
 .site-logo {
     width: auto;
@@ -42,7 +44,7 @@
 .menu-link {
     display: flex;
     align-items: center;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -63,7 +65,7 @@
     align-items: center;
     width: 153px;
     min-height: 50px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -75,11 +77,11 @@
 /* login popup */
 .login-popup {
     display: none;
-    position: absolute;
-    z-index: 2;
+    position: fixed;
+    z-index: 1;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 100%);
+    transform: translate(-50%, -30%);
     box-sizing: border-box;
     width: 100%;
     max-width: 500px;
@@ -88,6 +90,15 @@
     background-color: white;
     border: 1px solid #213B7E;
     box-shadow: 5px 5px 4px 0 rgba(0,0,0,0.25);
+}
+
+.login-heading {
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
 }
 
 .login-form {
@@ -102,6 +113,7 @@
     min-height: 55px;
     margin-bottom: 56px;
     border: 1px solid #808080;
+    padding: 0 1em;
 }
 
 .popup-button {
@@ -112,15 +124,20 @@
     justify-content: center;
     align-items: center;
     width: 153px;
-    min-height: 53px;
+    min-height: 50px;
     text-decoration: none;
     color: #ffffff;
     background-color: #EA6113;
     border: none;
 }
 
-.login-form > input {
-    padding: 0 1em;
+.login-input::placeholder,
+.password-input::placeholder {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
 }
 
 /* Main */
@@ -128,13 +145,19 @@
     width: 100%;
     max-width: 911px;
     margin: 0 auto;
-    padding: 0 2vw;
+    /* padding: 0 2vw; */
     flex-grow: 1;
     box-sizing: border-box;
+    margin-top: 30px;
 }
 
-.main-students {
-max-width: 1202px;
+.main-contacts {
+    width: 100%;
+    margin: 0;
+    /* padding: 0 2vw; */
+    flex-grow: 1;
+    box-sizing: border-box;
+    margin-top: 30px;
 }
 
 .class-photo {
@@ -153,21 +176,41 @@ max-width: 1202px;
 }
 
 h2 {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 25px;
     line-height: 29px;
 }
 
+.intro-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .intro-text {
+    margin: 0;
     width: 100%;
     max-width: 634px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
+}
+
+.intro-aside {
+    color: rgba(100, 100, 100, 1);
+    font-family: 'Lobster';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 45px;
+}
+
+.intro-aside > blockquote {
+    margin: 0;
 }
 
 .intro-text > strong {
@@ -180,23 +223,57 @@ h2 {
 }
 
 /* Students */
+.student-header {
+margin-bottom: 37px;
+}
+
+.main-students {
+    max-width: 1202px;
+    }
+
+.student-heading {
+    max-width: 1202px;
+    padding: 0 13px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+}
+
 .students {
     max-width: 1202px;
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
+    padding: 0 13px;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
+/* .student:nth-child(2n+1) {
+    background-color: #addce3
+} */
+
+/* .student-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    flex: 1 1 0;
+    outline: 1px solid rgb(198, 200, 204);
+    background-color: rgb(222, 235, 243);
+    width: 200px;
+} */
+
 .student {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1 1 0;
     outline: 1px solid rgb(198, 200, 204);
-    padding: 1em;
     box-sizing: border-box;
     width: 200px;
-    background-color: rgb(222, 235, 243);
+    background-color: #addce3;
 }
 
 @media (min-width: 1150px) {
@@ -205,30 +282,144 @@ h2 {
     }
 }
 
+.student-new {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    right: -13px;
+    display: flex;
+    padding: 2px 5px;
+    border-radius: 20px;
+    background-color: #3AA828;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+
 .student > img {
-    height: auto;
+    min-height: 270px;
+    object-position: bottom;
+    object-fit: contain;
 }
 
 .student-name {
     display:block;
     text-align: center;
+    margin: 0;
+    margin-bottom: 1em;
 }
 
 /* About */
-.about-text {
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 29px;
+.main-about {
+    max-width: 820px;
 }
+
+.about-heading {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.about-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 29px;
+}
+
+.about-video {
+    width: 100%;
+    min-height: 550px;
+    
+}
+
+/* Contacts */
+.contacts-about {
+    max-width: 100%;
+}
+
+.contacts-heading {
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contacts-text-heading {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 29px;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.yandex-map {
+    position:relative;
+    width: 100%;
+    height: 400px;
+}
+
+.contacts-maps {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    max-width: 1300px;
+    padding: 0 16px;
+}
+
+.contacts-address,
+.contacts-tel {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.myphoto {
+    object-fit: cover;
+    position: fixed;
+    transform: translateX(220%);
+    border-radius: 25px;
+    box-shadow: 0 4px 8px #addce3;
+}
+
+.skill{
+    border: 2px solid black;
+    border-collapse: collapse;
+    background-color: azure;
+    margin-bottom: 20px;
+}
+
+.skill td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 18px;
+}
+.skill th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.ul-square {
+    list-style-type: square;
+}
+
 
 /*Footer*/
 .footer {
 box-sizing: border-box;
 width: 100%;
 max-width: 1300px;
-margin: 0 auto;
+margin: 37px 0 auto;
 padding: 0 16px;
 min-height: 60px;
 display: flex;
@@ -251,6 +442,7 @@ background-color: rgb(33, 59, 126, 1)
     .header {
         justify-content: center;
         padding: 1em 16px;
+        gap: 1em;
     }
     .site-logo {
         width: 100%;
